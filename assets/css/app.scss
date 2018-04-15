@@ -1,3 +1,118 @@
-body{
-    background-color: red;
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700');
+@import './modules/_variables.scss';
+@import './modules/_mixins.scss';
+
+html,body{
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0px;
 }
+
+img{
+    width: 100%;
+}
+
+figure{
+    position: relative;
+    max-height: 100%;
+    margin:0px;
+    figcaption{
+        padding: $large-padding;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 2em;
+        position: absolute;
+        width: auto;
+        left: 10px;
+        bottom: 0px;
+        z-index: 10;
+        letter-spacing: .3em;
+        @include text-center;
+        color: rgba($grey, $alpha: 0.5) ;
+    }
+}
+
+.btn{
+    padding: $large-padding;
+    position: relative;
+    color: $black;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-sizing: border-box;
+    &:before{
+        content: " ";
+        position: absolute;
+        width: 100%;
+        left: 0px;
+        bottom: 0px;
+        height: 40%;
+        z-index: -1;
+        background-color: $light-blue;
+        transition: all 0.15s ease-out;
+    }
+    &:hover::before{
+        height: 100%;
+    }
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+}
+
+.grid-main-area{
+    margin-top: $big-margin-top;
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-areas: 
+    "title title title title title title title title title"
+    "image image image image image image image image image";
+    .text{
+        //grid-column: 1 / 5;
+        grid-area: title;
+        font-size: 1.2em;
+        font-weight: 200;
+        line-height: 1.5em;
+        h1{
+            font-weight: inherit;
+            font-size: $big;
+            letter-spacing: .3em;
+            line-height: 1.5em;
+            margin-top: 10px;
+        }
+    }
+    
+    .image{
+        //grid-column-start: 5;
+        //grid-column-end: 12;
+        grid-area: image;
+    }
+}
+
+.container{
+    grid-column: span 10;
+    padding: $big-padding;
+}
+
+.cover{
+    @include absolute-cover;
+    background-image:url(../../public/images/3.jpg);
+    max-height: 400px;
+    &.parallax{
+    }
+}
+
+@media (min-width: 960px){
+    .container{
+        grid-column: 2 / 12;
+    }
+
+    .grid-main-area{
+        display: grid;
+        grid-template-columns: repeat(9,1fr);
+        grid-template-areas: 
+        "title title title image image image image image image"
+    }
+}
+
