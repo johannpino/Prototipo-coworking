@@ -16,7 +16,35 @@
 
 @mixin absolute-cover{
     @include full;
+}
+
+@mixin caption {
+    padding: $large-padding;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 2em;
     position: absolute;
-    left: 0px;
-    right: 0px;
+    width: auto;
+    left: 10px;
+    bottom: 0px;
+    z-index: 10;
+    letter-spacing: 5px;
+    @include text-center;
+    color: rgba($grey, $alpha: 0.5) ;
+}
+@mixin text-right{
+    text-align: right;
+}
+@mixin main-text{
+     //grid-column: 1 / 5;
+     font-size: 1.2em;
+     font-weight: 200;
+     line-height: 1.5em;
+     h1{
+         font-weight: inherit;
+         font-size: $big;
+         letter-spacing: .3em;
+         line-height: 1.5em;
+         margin-top: 10px;
+     }
 }
