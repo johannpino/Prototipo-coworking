@@ -40,11 +40,15 @@
      font-size: 1.2em;
      font-weight: 200;
      line-height: 1.5em;
-     h1{
+     h1,h2{
          font-weight: inherit;
          font-size: $big;
          letter-spacing: .3em;
          line-height: 1.5em;
          margin-top: 10px;
      }
+}
+
+@mixin transition{
+    transition: all 0.6s ease-out;
 }

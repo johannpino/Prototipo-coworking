@@ -9,7 +9,7 @@ html,body{
 }
 
 img{
-    width: 100%;
+    max-width: 100%;
 }
 
 .full-height{
@@ -104,6 +104,77 @@ figure{
        }
     }
 }
+
+.slider{
+    .controls{
+        text-align: right;
+        margin-bottom: 10px;
+        padding-right: 2em;
+        display: none;
+        .right-arrow,.left-arrow{
+            height: 30px;
+            transition-duration: 0.15s;
+            cursor: pointer;
+            &.hove{
+                opacity: 0.2;
+                @include transition;
+            }
+            
+        }
+        .left-arrow{
+            transform: rotate(180deg);
+            margin-right: 1.5em;
+        }
+    }
+    .image{
+        height: 80vh;
+        width: 100%;
+        display: flex;
+    }
+    header{
+        background-color: $blue;
+        color: $white;
+        padding: $big-padding;
+        box-sizing: border-box;
+        transform: translateY(40px);
+        width: 80%;
+        margin: 0px auto;
+        z-index: 10;
+        position: relative;
+
+        h2{
+            margin: 0px;
+        }
+        .separator{
+            text-align: right;
+            padding-right: 150px;
+            position: relative;
+            color: white;
+            &::after{
+                position: absolute;
+                content: "";
+                height: 3px ;
+                width: 140px;
+                background-color:currentColor;
+                top:.7em;
+                right: 0px;
+            }
+        }
+    }
+}
+#slider-text-content{
+    @include transition;
+    &.hide{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+}
+#slider-image{
+    @include transition;&.hide{
+        opacity: 0;
+    }
+}
+
 .mission{
     align-items: center;
     .container{
@@ -152,6 +223,14 @@ figure{
         grid-template-areas: 
         "title title title image image image image image image"
     }
+    .slider{
+        align-items: center;
+        header{
+            transform: translateX(100px);
+            width: 100%;
+            min-height: 350px;
+        }
+    }
     .social{
         a{
             display: inline-block;
@@ -164,4 +243,5 @@ figure{
         }
     }
 }
+
 
