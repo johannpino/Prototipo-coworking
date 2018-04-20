@@ -53,6 +53,93 @@ figure{
     display: grid;
     grid-template-columns: repeat(12,1fr);
 }
+.menu{
+    position: fixed;
+    top:2em;
+    right: 2em;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #333;
+    z-index: 99;
+    background-color: #fff;
+    @include transition;
+    transition-duration: 0.3s;
+    &:hover{
+        background-color: #333;
+        color: white;
+        cursor: pointer;
+    }
+}
+.close{
+    position: absolute;
+    top:4em;
+    right: 4em;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #333;
+    z-index: 99;
+    background-color: #333;
+    color: white;
+    @include transition;
+    transition-duration: 0.3s;
+    &:hover{
+        cursor: pointer;
+        background-color: #fff;
+        color: #333;
+    }
+}
+
+.menu-screen{
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    top: -101vh;
+    @include center-vertical-horizontal;
+    @include transition;
+
+    &.active{
+        top: 0;
+
+    }
+    &:first-of-type{ margin-top: 0; }
+    a{
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        position: relative;
+        margin-top: 1em;
+        color:#333;
+        .main{
+            display: block;
+            font-size: 2em;
+        }
+        span:not(.main){
+            color: crimson;
+            opacity: 0;
+            transition-duration: 0.2s;
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            top: 1.3em;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #333;
+            @include transition;
+            transition-duration: 0.2s;
+            transform: scale(0);
+        }
+        &:hover::after{
+            transform:scale(1);
+        }
+        &:hover span:not(.main){
+            opacity: 1;
+        }
+    }
+}
 
 .grid-main-area{
     min-height: 100vh;
@@ -173,6 +260,10 @@ figure{
     @include transition;&.hide{
         opacity: 0;
     }
+}
+#mapa{
+    width: 100%;
+    height: 60vh;
 }
 
 .mission{
