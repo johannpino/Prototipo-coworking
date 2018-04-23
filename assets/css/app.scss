@@ -41,7 +41,7 @@ figure{
         bottom: 0px;
         height: 40%;
         z-index: -1;
-        background-color: $light-blue;
+        background-color: #BEEB9F;
         transition: all 0.15s ease-out;
     }
     &:hover::before{
@@ -116,7 +116,7 @@ figure{
             font-size: 2em;
         }
         span:not(.main){
-            color: crimson;
+            color:#D95858;
             opacity: 0;
             transition-duration: 0.2s;
         }
@@ -177,7 +177,7 @@ figure{
     }
     p{
        @include caption;
-       background-color: rgba($blue, 0.8);
+       background-color: rgba($green, 0.8);
        display: block;
        width: 100%;
        left: 0px;
@@ -219,7 +219,7 @@ figure{
         display: flex;
     }
     header{
-        background-color: $blue;
+        background-color:$green;
         color: $white;
         padding: $big-padding;
         box-sizing: border-box;
@@ -263,7 +263,7 @@ figure{
 }
 #mapa{
     width: 100%;
-    height: 60vh;
+    height: 50vh;
 }
 
 .mission{
@@ -287,7 +287,6 @@ figure{
 }
 
 .social{
-    margin-top: $big-margin-top;
     margin-bottom: $big-margin-top;
     @include text-center;
 
@@ -312,7 +311,10 @@ figure{
         display: grid;
         grid-template-columns: repeat(9,1fr);
         grid-template-areas: 
-        "title title title image image image image image image"
+        "title title title image image image image image image";
+        .text{
+            width: 90%;
+        }
     }
     .slider{
         align-items: center;

@@ -30,7 +30,7 @@
     z-index: 10;
     letter-spacing: 5px;
     @include text-center;
-    color: rgba($grey, $alpha: 0.5) ;
+    color: rgba($black, $alpha: 0.5) ;
 }
 @mixin text-right{
     text-align: right;

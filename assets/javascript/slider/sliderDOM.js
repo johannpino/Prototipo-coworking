@@ -38,7 +38,7 @@ leftArrow.addEventListener('click',slider.prev);
 rightArrow.addEventListener('click',slider.next);
 
 const imagePaths = e.map(el => el.image)
-console.log(imagePaths)
+//console.log(imagePaths)
 
 Preloader.preloadImages({
     images : imagePaths,

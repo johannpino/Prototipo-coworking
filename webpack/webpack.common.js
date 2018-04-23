@@ -7,8 +7,6 @@ const htmlWebpack = new HtmlWebpackPlugin({
 })
 
 module.exports = {
-    mode: 'development',
-
     entry: './assets/javascript/entry.js',
     output:{
         publicPath:'/',
@@ -20,10 +18,7 @@ module.exports = {
       ],
     module:{
         rules:[
-            {
-                test:/\.scss$/,
-                use:['style-loader','css-loader','sass-loader']
-            },
+           
             { test: /\.jpg$/, loader: 'url-loader' }
         ]
     }
